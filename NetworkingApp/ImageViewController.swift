@@ -14,28 +14,21 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         fetchImage()
     }
     
     private func fetchImage() {
-        guard let url = URL(string: Link.imageURL.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let response = response else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            
-            print(response)
-
-            guard let image = UIImage(data: data) else { return }
-            DispatchQueue.main.async {
-                self.imageView.image = image
+        NetworkManager.shared.fetchImage(from: Link.imageURL.rawValue) { result in
+            switch result {
+            case .success(let data):
+                self.imageView.image = UIImage(data: data)
                 self.activityIndicator.stopAnimating()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-        }.resume()
+        }
     }
 }

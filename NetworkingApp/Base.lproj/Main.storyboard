@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccL-DE-RxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccL-DE-RxL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -63,6 +64,9 @@
                     <connections>
                         <segue destination="lZB-gW-hCS" kind="show" identifier="showCourses" id="l9s-pj-DNk"/>
                         <segue destination="Xup-ro-ueU" kind="show" identifier="showImage" id="rOK-Oj-ay0"/>
+                        <segue destination="lZB-gW-hCS" kind="show" identifier="alamofireGet" id="VDJ-cQ-pS9"/>
+                        <segue destination="lZB-gW-hCS" kind="show" identifier="alamofirePost" id="08D-pr-4v3"/>
+                        <segue destination="lZB-gW-hCS" kind="show" identifier="showCoursesV2" id="jiG-vr-cvS"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWq-4I-iQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -78,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="391-B2-IP9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="804"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gci-5J-FbK">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
@@ -103,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dw-cQ-6sg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475.3623188405797" y="-215.625"/>
+            <point key="canvasLocation" x="1610" y="-215"/>
         </scene>
         <!--Courses View Controller-->
         <scene sceneID="4PQ-ib-Uu2">
@@ -115,7 +119,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="101" id="Mfu-U2-gWe" customClass="CourseCell" customModule="NetworkingApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="101"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mfu-U2-gWe" id="RmP-9L-iuR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
@@ -187,7 +191,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3q-yq-alN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475.3623188405797" y="466.07142857142856"/>
+            <point key="canvasLocation" x="1610" y="450"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iJn-pB-uqn">
@@ -195,7 +199,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ccL-DE-RxL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9U0-dk-uNb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -208,6 +212,9 @@
             <point key="canvasLocation" x="-49.275362318840585" y="91.741071428571431"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jiG-vr-cvS"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
